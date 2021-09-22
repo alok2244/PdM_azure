@@ -1,5 +1,4 @@
 gradio
 joblib
 numpy
-pickle-mixin
-pickle
+
