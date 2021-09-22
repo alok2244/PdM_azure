@@ -36,11 +36,11 @@ def prediction():
      print(input_list_value)
      print(type(input_list_value))
      
-     scaler = joblib.load('scaler.sav')
+     #scaler = joblib.load('scaler.sav')
     
      a = np.array(input_list_value)
      a=np.reshape(a,(1, a.size))
-     a= scaler.transform(a)
+     #a= scaler.transform(a)
     
      reg = joblib.load('clf_reg.sav')
      
