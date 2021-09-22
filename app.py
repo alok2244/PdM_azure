@@ -45,7 +45,7 @@ def prediction():
      input_list_value=[]
      if request.method == 'POST':
          for i,name in enumerate(input_list_name):
-            input_list_value.append(request.form[name])
+            input_list_value.append(float(request.form[name]))
      
      print(input_list_value)
      print(type(input_list_value))
