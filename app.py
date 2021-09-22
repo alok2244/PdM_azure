@@ -1,8 +1,22 @@
 from flask import Flask,render_template,request
 import numpy as np
 import joblib
+import pickle
 print('here3')
 app=Flask(__name__)
+print('here4')
+
+
+    
+with open('scaler.pkl', 'rb') as handle:
+    scaler = pickle.load(handle)
+
+with open('clf_bin.pkl', 'rb') as handle:
+    _bin = pickle.load(handle)
+    
+with open('clf_reg.pkl', 'rb') as handle:
+    reg = pickle.load(handle)
+   
 
 @app.route("/")
 def home():
@@ -36,18 +50,18 @@ def prediction():
      print(input_list_value)
      print(type(input_list_value))
      
-     #scaler = joblib.load('scaler.sav')
+     
     
      a = np.array(input_list_value)
      a=np.reshape(a,(1, a.size))
-     #a= scaler.transform(a)
+     a= scaler.transform(a)
     
-     reg = joblib.load('clf_reg.sav')
+     
      
      RUL=reg.predict(a)
      print(RUL)
     
-     _bin = joblib.load('clf_bin.sav')
+     
     
      RUL_Binary=_bin.predict(a)
      mapping=lambda x: "Engine Is Okay" if x==1 else "Engine Is Not Okay"
