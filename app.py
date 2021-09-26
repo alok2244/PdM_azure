@@ -3,9 +3,9 @@ import numpy as np
 import joblib
 import pickle
 import os
-print('here3')
+
 app=Flask(__name__)
-print('here4')
+
 
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))     
@@ -82,5 +82,5 @@ def prediction():
      return render_template('main.html',output=True,RemainingUL=RUL,condition=engine_health)
 
 if __name__ == '__main__':
-    print('here2')
+   
     app.run()
