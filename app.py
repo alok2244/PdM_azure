@@ -8,14 +8,14 @@ print('here4')
 
 
     
-with open('scaler.pkl', 'rb') as handle:
-    scaler = pickle.load(handle)
+#with open('scaler.pkl', 'rb') as handle:
+ #   scaler = pickle.load(handle)
 
-with open('clf_bin.pkl', 'rb') as handle:
-    _bin = pickle.load(handle)
+#with open('clf_bin.pkl', 'rb') as handle:
+ #   _bin = pickle.load(handle)
     
-with open('clf_reg.pkl', 'rb') as handle:
-    reg = pickle.load(handle)
+#with open('clf_reg.pkl', 'rb') as handle:
+ #   reg = pickle.load(handle)
    
 
 @app.route("/")
