@@ -6,28 +6,31 @@ import os
 
 app=Flask(__name__)
 
+scaler = pickle.load(open('scaler.pkl','rb'))
+_bin = pickle.load(open('clf_bin.pkl','rb'))
+reg = pickle.load(open('clf_reg.pkl','rb'))
 
 
-APP_ROOT = os.path.dirname(os.path.abspath(__file__))     
+#APP_ROOT = os.path.dirname(os.path.abspath(__file__))     
 # set file directory path
 
-scaler_path = os.path.join(APP_ROOT, "./pickel/scaler.pkl")  
+#scaler_path = os.path.join(APP_ROOT, "./pickel/scaler.pkl")  
 # set path to the scaler
 
-clf_path = os.path.join(APP_ROOT, "./pickel/clf_bin.pkl") 
+#clf_path = os.path.join(APP_ROOT, "./pickel/clf_bin.pkl") 
 # set path to the clf
 
-reg_path = os.path.join(APP_ROOT, "./pickel/clf_reg.pkl") 
+#reg_path = os.path.join(APP_ROOT, "./pickel/clf_reg.pkl") 
 # set path to the reg
     
-with open(scaler_path, 'rb') as handle:
-    scaler = pickle.load(handle)
+#with open(scaler_path, 'rb') as handle:
+ #   scaler = pickle.load(handle)
 
-with open(clf_path, 'rb') as handle:
-    _bin = pickle.load(handle)
+#with open(clf_path, 'rb') as handle:
+   # _bin = pickle.load(handle)
     
-with open(reg_path, 'rb') as handle:
-    reg = pickle.load(handle)
+#with open(reg_path, 'rb') as handle:
+ #   reg = pickle.load(handle)
    
 
 @app.route("/")
